@@ -10,7 +10,6 @@ export default function Navigation() {
   const navItems = [
     { label: "Home", path: "/" },
     { label: "Features", path: "/features" },
-    { label: "Download", path: "/download" },
   ];
 
   return (

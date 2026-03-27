@@ -12,20 +12,28 @@ export default function AnimatedBackground() {
 
   if (!mounted) return null;
 
-  // Cloud positions heavily focused towards the middle section
+  // Cloud positions - FASTER animations
   const clouds = [
-    { top: "15%", left: "-20%", scale: 1.1, duration: 35, delay: 0 },
-    { top: "35%", left: "-30%", scale: 0.9, duration: 45, delay: 5 },
-    { top: "50%", left: "-15%", scale: 1.3, duration: 38, delay: 2 },
-    { top: "65%", left: "-40%", scale: 0.8, duration: 50, delay: 8 },
-    { top: "80%", left: "-25%", scale: 1, duration: 42, delay: 15 },
+    { top: "15%", left: "-20%", scale: 1.1, duration: 16, delay: 0 },
+    { top: "35%", left: "-30%", scale: 0.9, duration: 20, delay: 2 },
+    { top: "50%", left: "-15%", scale: 1.3, duration: 18, delay: 1 },
+    { top: "65%", left: "-40%", scale: 0.8, duration: 22, delay: 3 },
+    { top: "80%", left: "-25%", scale: 1, duration: 19, delay: 1.5 },
+  ];
+
+  // Flying birds
+  const birds = [
+    { top: "20%", duration: 18, delay: 0, size: 24 },
+    { top: "45%", duration: 22, delay: 5, size: 20 },
+    { top: "70%", duration: 20, delay: 3, size: 26 },
   ];
 
   return (
     <div className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden bg-[var(--background)]">
+      {/* Clouds */}
       {clouds.map((cloud, i) => (
         <motion.div
-          key={i}
+          key={`cloud-${i}`}
           className="sketch-cloud absolute"
           style={{
             top: cloud.top,
@@ -41,6 +49,29 @@ export default function AnimatedBackground() {
             delay: cloud.delay,
           }}
         />
+      ))}
+
+      {/* Flying Birds */}
+      {birds.map((bird, i) => (
+        <motion.div
+          key={`bird-${i}`}
+          className="absolute z-[2] select-none"
+          style={{
+            top: bird.top,
+            fontSize: `${bird.size}px`,
+          }}
+          initial={{ x: "-50px", opacity: 0 }}
+          animate={{ x: "calc(100vw + 50px)", opacity: [0, 1, 1, 0] }}
+          transition={{
+            duration: bird.duration,
+            repeat: Infinity,
+            repeatType: "loop",
+            ease: "linear",
+            delay: bird.delay,
+          }}
+        >
+          🦅
+        </motion.div>
       ))}
 
       {/* Grid pattern faintly simulating a sketchbook */}
