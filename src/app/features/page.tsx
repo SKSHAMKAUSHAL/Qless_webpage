@@ -81,21 +81,19 @@ export default function Features() {
           Packed with <span className="text-[var(--color-secondary)] underline decoration-wavy">Amazing</span> Features
         </motion.h1>
         <motion.p 
-          className="text-2xl opacity-80 max-w-2xl mx-auto"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-        >
-          Everything you need to manage food, restaurants, and vendors in one powerful app.
-        </motion.p>
+            className="text-xl sm:text-2xl text-[var(--color-ink)] opacity-80 max-w-3xl leading-relaxed mt-6 px-4 shadow-sm sketch-border bg-white p-6 mx-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+          >
+            Enjoy seamless multi-role access for Admins, Vendors, and Users! Powered by Cloud Firestore for <strong>real-time synchronization</strong>, with <span className="text-[var(--color-secondary)] font-bold underline decoration-wavy">persistent login sessions</span> so you never have to log back in. Upload food items, create orders, and manage restaurants in one unified ecosystem.          </motion.p>
       </motion.div>
 
       {/* Features Grid */}
-      <motion.div 
+      <motion.div
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         variants={containerVariants}
-        initial="hidden"
-        whileInView="show"
+        initial="hidden"        whileInView="show"
         viewport={{ once: true, margin: "-50px" }}
       >
         {features.map((feature, idx) => (
@@ -197,14 +195,14 @@ export default function Features() {
           <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
             Powered by Flutter, Firebase, and cutting-edge web technologies
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm font-bold">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-lg font-bold">
             {["Flutter", "Firebase", "Firestore", "Storage", "Authentication", "Cloud Functions", "Realtime DB", "Analytics"].map((tech, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, scale: 0 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: i * 0.05 }}
-                className="sketch-border bg-white bg-opacity-20 p-3 rounded-lg backdrop-blur-sm"
+                className="sketch-border bg-white text-[var(--color-ink)] p-3 rounded-lg flex items-center justify-center hover:scale-105 transition-transform cursor-default"
               >
                 {tech}
               </motion.div>
