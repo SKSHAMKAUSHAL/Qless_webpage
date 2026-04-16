@@ -1,7 +1,5 @@
 # Qless Website 🍔
 
-![Qless Hero Banner](public/README-Banner.png) *(Note: Please add a banner image to public/README-Banner.png if you wish to display one)*
-
 **Qless** is the ultimate food management application. This repository contains the landing page website built to showcase its powerful features and provide download links. The Qless App itself is a cross-platform solution utilizing Firebase for a seamless, real-time ecosystem connecting Admins, Vendors, and Users.
 
 ---
