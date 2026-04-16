@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Qless Website 🍔
 
-## Getting Started
+![Qless Hero Banner](public/README-Banner.png) *(Note: Please add a banner image to public/README-Banner.png if you wish to display one)*
 
-First, run the development server:
+**Qless** is the ultimate food management application. This repository contains the landing page website built to showcase its powerful features and provide download links. The Qless App itself is a cross-platform solution utilizing Firebase for a seamless, real-time ecosystem connecting Admins, Vendors, and Users.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Core Functionality
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Website Features
+- **Modern Landing Page**: Highlights the Qless app with beautiful, snappy animations and clear call-to-actions.
+- **Dynamic Features Showcase**: Interactive, animated grid displaying the main app capabilities like role management, storage, cross-platform support, and synchronization.
+- **Responsive Design**: Flawless experience across desktop, tablet, and mobile devices using Tailwind CSS v4.
+- **Download Integration**: Easy access to the main application via environment-configured download URLs (`NEXT_PUBLIC_APP_LINK`).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### App Capabilities Showcased
+The website promotes the following features of the Qless App:
+- **Persistent Sessions**: Seamless re-entry across app restarts via Firebase Authentication.
+- **Multi-Role Access**: Dedicated portals and permissions for **Admins**, **Vendors**, and end **Users**.
+- **Real-Time Sync**: Instant live updates across all platforms without polling (powered by Cloud Firestore).
+- **Cloud Storage**: Seamless food image uploads, optimized and delivered instantly via Firebase Storage.
+- **Cross-Platform**: Developed in Flutter, available on Android, iOS, Windows, macOS, Linux, and Web from a single codebase.
+- **Comprehensive Food Management**: Complete inventory tracking, categories, and dynamic pricing.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Tech Stack & Tools
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Frontend (Website)
+- **[Next.js](https://nextjs.org/) (v16.2.1)**: React framework for server-side rendering and static site generation.
+- **[React](https://react.dev/) (v19.2.4)**: Core library for building the UI components.
+- **[TypeScript](https://www.typescriptlang.org/) (v5)**: Strongly typed programming language building on JavaScript.
+- **[Tailwind CSS](https://tailwindcss.com/) (v4)**: Utility-first CSS framework for rapid and responsive styling.
+- **[Framer Motion](https://www.framer.com/motion/)**: Production-ready animation library for interactive and smooth screen transitions.
+- **[GSAP](https://gsap.com/)**: Professional-grade animation library for rich web animations.
+- **[Lucide React](https://lucide.dev/)**: Beautiful, crisp SVG icons.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Application Backend (Promoted App Stack)
+- **[Flutter](https://flutter.dev/)**: Single codebase for cross-platform app delivery.
+- **[Firebase Authentication](https://firebase.google.com/docs/auth)**: Secure persistent user sessions.
+- **[Cloud Firestore](https://firebase.google.com/docs/firestore)**: Real-time NoSQL database syncing data instantly.
+- **[Firebase Storage](https://firebase.google.com/docs/storage)**: Robust cloud storage for food imagery.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ⚙️ Getting Started
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Prerequisites
+- Node.js (v20+ recommended)
+- npm, yarn, pnpm, or bun
+
+### Installation & Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone <repository_url>
+   cd Qless_Website/qless-website
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
+
+3. **Environment Setup:**
+   Create a `.env` or `.env.local` file at the root of `qless-website` and provide your app's download link:
+   ```env
+   NEXT_PUBLIC_APP_LINK=https://link-to-your-app-download.com
+   ```
+
+4. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+
+5. **Open in browser:**
+   Navigate to [http://localhost:3000](http://localhost:3000) to view the application running locally.
+
+---
+
+## 🔧 Scripts
+- `npm run dev`: Starts the Next.js development server.
+- `npm run build`: Builds the application for production deployment.
+- `npm run start`: Starts a production-ready Next.js server.
+- `npm run lint`: Runs ESLint to find and fix code style issues.
+
+---
+
+Built with ❤️ by the Qless Team.

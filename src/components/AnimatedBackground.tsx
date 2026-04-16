@@ -12,13 +12,13 @@ export default function AnimatedBackground() {
 
   if (!mounted) return null;
 
-  // Cloud positions - SLOWER animations
+  // Cloud positions - Appears immediately and floats across
   const clouds = [
-    { top: "15%", left: "-20%", scale: 1.1, duration: 45, delay: 0 },
-    { top: "35%", left: "-30%", scale: 0.9, duration: 55, delay: 2 },
-    { top: "50%", left: "-15%", scale: 1.3, duration: 50, delay: 1 },
-    { top: "65%", left: "-40%", scale: 0.8, duration: 60, delay: 3 },
-    { top: "80%", left: "-25%", scale: 1, duration: 52, delay: 1.5 },
+    { top: "15%", left: "10%", scale: 1.1, duration: 45 },
+    { top: "35%", left: "40%", scale: 0.9, duration: 55 },
+    { top: "50%", left: "70%", scale: 1.3, duration: 50 },
+    { top: "65%", left: "-5%", scale: 0.8, duration: 60 },
+    { top: "80%", left: "85%", scale: 1, duration: 52 },
   ];
 
 // Rain drops coming from above
@@ -41,19 +41,18 @@ export default function AnimatedBackground() {
       {clouds.map((cloud, i) => (
         <motion.div
           key={`cloud-${i}`}
-          className="sketch-cloud absolute"
+          className="sketch-cloud absolute w-32 h-16 bg-white/5" // ensuring some base class sizing if not present
           style={{
             top: cloud.top,
+            left: cloud.left,
             scale: cloud.scale,
           }}
-          initial={{ x: "-100vw", opacity: 0.6 }}
-          animate={{ x: "120vw" }}
+          initial={{ x: "-10vw", opacity: 0.6 }}
+          animate={{ x: ["0vw", "110vw", "-20vw", "0vw"] }}
           transition={{
             duration: cloud.duration,
             repeat: Infinity,
-            repeatType: "loop",
             ease: "linear",
-            delay: cloud.delay,
           }}
         />
       ))}
